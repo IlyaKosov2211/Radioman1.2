@@ -11,7 +11,22 @@ public class Radio {
 
     private int minVolume = 0;
 
-    private int maxVolume = 10;
+    private int maxVolume = 100;
+
+    private int numberOfStations = 10;
+
+    public Radio() {
+    }
+
+    public Radio(int numberOfStations) {
+
+        this.numberOfStations = numberOfStations;
+    }
+
+    public int getNumberOfStations() {
+
+        return numberOfStations;
+    }
 
     private int getMinStation() {
 
