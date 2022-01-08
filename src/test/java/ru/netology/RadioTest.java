@@ -7,6 +7,17 @@ import static org.junit.jupiter.api.Assertions.*;
 class RadiomanTest {
 
     @Test
+    void setManualInstalationNumberOfStations() {
+        Radio station= new Radio(12);
+        assertEquals(12, station.getNumberOfStations());
+    }
+    @Test
+    void setShouldShowMaxStationAtEstablishedNumberOfStation(){
+        Radio station= new Radio(12);
+        assertEquals(11, station.getMaxStation());
+    }
+
+    @Test
     void setManualInstalationStation() {
         Radio station = new Radio();
         station.setManualInstalationStation(2);
@@ -123,9 +134,9 @@ class RadiomanTest {
     @Test
     void setManualInstalationVolumeValueAboveTheMaximum() {
         Radio volume = new Radio();
-        volume.setManualInstalationVolume(10);
+        volume.setManualInstalationVolume(101);
         int actual = volume.getCurrentVolume();
-        int expected = 10;
+        int expected = 100;
         assertEquals(expected, actual);
     }
 
@@ -150,9 +161,9 @@ class RadiomanTest {
     @Test
     void setManualInstalationVolumeMaxVolume() {
         Radio volume = new Radio();
-        volume.setManualInstalationVolume(10);
+        volume.setManualInstalationVolume(100);
         int actual = volume.getCurrentVolume();
-        int expected = 10;
+        int expected = 100;
         assertEquals(expected, actual);
     }
 
@@ -169,10 +180,10 @@ class RadiomanTest {
     @Test
     void buttonIncreaseTheVolumeValueAboveTheMaximum() {
         Radio volume = new Radio();
-        volume.setManualInstalationVolume(11);
+        volume.setManualInstalationVolume(101);
         volume.buttonIncreaseTheVolume();
         int actual = volume.getCurrentVolume();
-        int expected = 10;
+        int expected = 100;
         assertEquals(expected, actual);
     }
 
@@ -199,10 +210,10 @@ class RadiomanTest {
     @Test
     void buttonIncreaseTheVolumeMaxVolume() {
         Radio volume = new Radio();
-        volume.setManualInstalationVolume(10);
+        volume.setManualInstalationVolume(100);
         volume.buttonIncreaseTheVolume();
         int actual = volume.getCurrentVolume();
-        int expected = 10;
+        int expected = 100;
         assertEquals(expected, actual);
     }
 
@@ -219,10 +230,10 @@ class RadiomanTest {
     @Test
     void buttonLowerTheVolumeValueAboveTheMaximum() {
         Radio volume = new Radio();
-        volume.setManualInstalationVolume(10);
+        volume.setManualInstalationVolume(101);
         volume.buttonLowerTheVolume();
         int actual = volume.getCurrentVolume();
-        int expected = 9;
+        int expected = 99;
         assertEquals(expected, actual);
     }
 
@@ -249,10 +260,10 @@ class RadiomanTest {
     @Test
     void buttonLowerTheVolumeMaxVolume() {
         Radio volume = new Radio();
-        volume.setManualInstalationVolume(10);
+        volume.setManualInstalationVolume(100);
         volume.buttonLowerTheVolume();
         int actual = volume.getCurrentVolume();
-        int expected = 9;
+        int expected = 99;
         assertEquals(expected, actual);
     }
 
