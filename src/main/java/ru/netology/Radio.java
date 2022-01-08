@@ -10,25 +10,16 @@ import lombok.NoArgsConstructor;
 
 public class Radio {
     private int currentStation;
-
     private int currentVolume;
-
     private int minStation = 0;
-
-    private int maxStation = 9;
-
     private int minVolume = 0;
-
     private int maxVolume = 100;
-
     private int numberOfStations = 10;
-
+    private int maxStation = numberOfStations - 1;
 
     public Radio(int numberOfStations) {
-
         this.numberOfStations = numberOfStations;
     }
-
 
     public void setManualInstalationStation(int newCurrentStation) {
         if (newCurrentStation < getMaxStation()) {
