@@ -7,9 +7,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class RadiomanTest {
 
     @Test
-    void manualInstalationNumberOfStations() {
+    void setManualInstalationNumberOfStations() {
         Radio station= new Radio(12);
         assertEquals(12, station.getNumberOfStations());
+    }
+    @Test
+    void setShouldShowMaxStationAtEstablishedNumberOfStation(){
+        Radio station= new Radio(12);
+        assertEquals(11, station.getMaxStation());
     }
 
     @Test
