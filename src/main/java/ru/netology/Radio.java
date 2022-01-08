@@ -1,46 +1,24 @@
 package ru.netology;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+
 public class Radio {
     private int currentStation;
-
     private int currentVolume;
-
     private int minStation = 0;
-
-    private int maxStation = 9;
-
     private int minVolume = 0;
+    private int maxVolume = 100;
+    private int numberOfStations = 10;
+    private int maxStation = numberOfStations - 1;
 
-    private int maxVolume = 10;
-
-    private int getMinStation() {
-
-        return minStation;
-    }
-
-    private int getMaxStation() {
-
-        return maxStation;
-    }
-
-    private int getMinVolume() {
-
-        return minVolume;
-    }
-
-    private int getMaxVolume() {
-
-        return maxVolume;
-    }
-
-    public int getCurrentStation() {
-
-        return currentStation;
-    }
-
-    public int getCurrentVolume() {
-
-        return currentVolume;
+    public Radio(int numberOfStations) {
+        this.numberOfStations = numberOfStations;
     }
 
     public void setManualInstalationStation(int newCurrentStation) {
